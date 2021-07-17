@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -30,9 +30,81 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div class="row" id="9am">
-        <div class="col hour pt-3">9AM</div>
-        <div class="col-10 pt-3 past present future">My event for today</div>
+      <div class="row time-block" id="09">
+        <div class="hour col pt-3">9AM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="10">
+        <div class="col hour pt-3">10AM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="11">
+        <div class="col hour pt-3">11AM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="12">
+        <div class="col hour pt-3">12PM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="13">
+        <div class="col hour pt-3">1PM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="14">
+        <div class="col hour pt-3">2PM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="15">
+        <div class="col hour pt-3">3PM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="16">
+        <div class="col hour pt-3">4PM</div>
+        <p class="description col-10 pt-3"></p>
+        <div
+          class="col saveBtn d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-save"></i>
+        </div>
+      </div>
+      <div class="row time-block" id="17">
+        <div class="col hour pt-3">5PM</div>
+        <p class="description col-10 pt-3"></p>
         <div
           class="col saveBtn d-flex align-items-center justify-content-center"
         >
@@ -42,6 +114,12 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"
+      integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./assets/js/script.js" defer></script>
   </body>
 </html>
