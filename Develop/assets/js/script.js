@@ -3,17 +3,6 @@ const today = $('#currentDay').append(now.format('dddd, MMMM D, YYYY'));
 const curHour = now.format('HH');
 
 // tasks object to store in localStorage.
-var tasks = {
-  9: [],
-  10: [],
-  11: [],
-  12: [],
-  13: [],
-  14: [],
-  15: [],
-  16: [],
-  17: [],
-};
 
 $('.time-block').each(function () {
   var calHour = parseInt($(this).attr('id'));
@@ -30,30 +19,33 @@ $('.time-block').each(function () {
   }
 });
 
-// var textInput = $('<textarea>').addClass('description col-10 pt-3');
+var tasks = [];
 
-// $('p').on('click', function () {
-//   $(this).replaceWith(textInput);
-//   // auto focus new element
-//   textInput.trigger('focus');
+// //load tasks
+var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-//   // editable field was un-focused
-//   $('.description').on('blur', 'textInput', function () {
-//     // get current value of textarea
-//     var text = $(this).val();
+$('.description').on('click', function () {
+  var textInput = $('<textarea>').addClass('description col-10 pt-3');
+  $(this).replaceWith(textInput);
+  // auto focus new element
+  $(this).trigger('focus');
 
-//     // recreate p element
-//     var taskP = $('<p>').addClass('description col-10 pt-3').text(text);
+  // editable field was un-focused
+  $(this).on('blur', 'textInput', function () {
+    // get current value of textarea
+    var text = $(this).val();
+    console.log(text);
 
-//     // replace textarea with new content
-//     $(this).replaceWith(taskP);
-//   });
-// });
+    // recreate p element`
+    var taskP = $('<p>').addClass('description col-10 pt-3').text(text);
 
-// on save button click, then save in local storage'
+    // replace textarea with new content
+    $(this).replaceWith(taskP);
+  });
+});
 
-// var saveDescription = function (p) $('.saveBtn').on('click', function () {
-//   localStorage.setItem('description', JSON.stringify(description));
-// });
-
-//create event listener for save button click
+$('.saveBtn').on('click', function () {
+  $('.description').each(function () {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  });
+});
