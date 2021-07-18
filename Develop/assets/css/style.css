@@ -76,3 +76,11 @@ textarea {
   color: white;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 400px) {
+  main {
+    width: auto;
+    margin: auto 20px;
+    justify-content: center;
+  }
+}
