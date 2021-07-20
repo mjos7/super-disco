@@ -5,7 +5,7 @@ const curHour = now.format('HH');
 // tasks object to store in localStorage.
 
 $('.saveBtn').on('click', function () {
-  var taskDesc = $(this).siblings('.description').val();
+  var taskDesc = $(this).siblings('.description').val().trim();
   var time = $(this).parent().attr('id');
   localStorage.setItem(time, JSON.stringify(taskDesc));
 });
@@ -37,7 +37,7 @@ $('.description').on('click', function () {
     var text = $(this).val();
 
     // recreate p element
-    var taskP = $('<p>').addClass('description col-10 pt-3').text(text);
+    var taskP = $('<p>').addClass('description col-10 pt-3').text(text).trim();
 
     // replace textarea with new content
     $(this).replaceWith(taskP);
@@ -49,8 +49,5 @@ $('.description').each(function (i, item) {
   var blockHour = $(this).parent().attr('id');
   // get item from local storage - key
   var hourValue = JSON.parse(localStorage.getItem(blockHour));
-  console.log(item);
   $('.description col-10 pt-3 #' + i).val(hourValue);
-  // $(`#${i}`).text(hourValue);
-  // console.log($(`#${i}`));
 });
