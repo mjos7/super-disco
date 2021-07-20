@@ -4,6 +4,12 @@ const curHour = now.format('HH');
 
 // tasks object to store in localStorage.
 
+$('.saveBtn').on('click', function () {
+  var taskDesc = $(this).siblings('.description').val();
+  var time = $(this).parent().attr('id');
+  localStorage.setItem(time, JSON.stringify(taskDesc));
+});
+
 $('.time-block').each(function () {
   var calHour = parseInt($(this).attr('id'));
 
@@ -19,11 +25,6 @@ $('.time-block').each(function () {
   }
 });
 
-var tasks = [];
-
-// //load tasks
-var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
 $('.description').on('click', function () {
   var textInput = $('<textarea>').addClass('description col-10 pt-3');
   $(this).replaceWith(textInput);
@@ -34,9 +35,8 @@ $('.description').on('click', function () {
   $(this).on('blur', 'textInput', function () {
     // get current value of textarea
     var text = $(this).val();
-    console.log(text);
 
-    // recreate p element`
+    // recreate p element
     var taskP = $('<p>').addClass('description col-10 pt-3').text(text);
 
     // replace textarea with new content
@@ -44,8 +44,13 @@ $('.description').on('click', function () {
   });
 });
 
-$('.saveBtn').on('click', function () {
-  $('.description').each(function () {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  });
+// use jquery each to go through each key
+$('.description').each(function (i, item) {
+  var blockHour = $(this).parent().attr('id');
+  // get item from local storage - key
+  var hourValue = JSON.parse(localStorage.getItem(blockHour));
+  console.log(item);
+  $('.description col-10 pt-3 #' + i).val(hourValue);
+  // $(`#${i}`).text(hourValue);
+  // console.log($(`#${i}`));
 });
