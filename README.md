@@ -1,15 +1,25 @@
-# Work Day Scheduler Starter Code
+### Work Day Scheduler Starter Code
 
-<!-- GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist -->
+# General
+
+Git Page - Deployed Application
+https://mjos7.github.io/work-day-scheduler/
+gi
+Screenshot of Mockup
+![Screenshot of Mockup](https://github.com/mjos7/work-day-scheduler/blob/main/assets/img/work-day-scheduler-mockup.png.gif)
+
+## Description
+
+Welcome to my Work Day Scheduler
+The work day scheduler does the following:
+
+- Each day you will have a new daily schedule
+- Each time block updates colors based on if it's in the past, present or future.
+- Each day you will have a new daily schedule
+- You can set tasks in each hour block for a working day from 9am to 5pm.
+- You can edit your tasks at any time
+- If you close your browser and re-visit the page, your information will be saved in localstorage and display accordingly.
+
+## Comments
+
+- Please don't hesitate to reach out if you have any suggestions or feedback

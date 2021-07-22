@@ -2,7 +2,7 @@ const now = dayjs();
 const today = $('#currentDay').append(now.format('dddd, MMMM D, YYYY'));
 const curHour = now.format('HH');
 
-// tasks object to store in localStorage.
+// store task in localStorage
 
 $('.saveBtn').on('click', function () {
   var taskDesc = $(this).siblings('.description').val().trim();
@@ -26,7 +26,11 @@ $('.time-block').each(function () {
 });
 
 $('.description').on('click', function () {
-  var textInput = $('<textarea>').addClass('description col-10 pt-3');
+  var storedText = $(this).text();
+
+  var textInput = $('<textarea>')
+    .addClass('description col-10 pt-3')
+    .val(storedText);
   $(this).replaceWith(textInput);
   // auto focus new element
   $(this).trigger('focus');
@@ -36,18 +40,17 @@ $('.description').on('click', function () {
     // get current value of textarea
     var text = $(this).val();
 
-    // recreate p element
-    var taskP = $('<p>').addClass('description col-10 pt-3').text(text).trim();
-
     // replace textarea with new content
-    $(this).replaceWith(taskP);
+    $(this).replaceWith(
+      $('<p>').addClass('description col-10 pt-3').text(text).trim()
+    );
   });
 });
 
 // use jquery each to go through each key
-$('.description').each(function (i, item) {
+$('.description').each(function () {
   var blockHour = $(this).parent().attr('id');
   // get item from local storage - key
   var hourValue = JSON.parse(localStorage.getItem(blockHour));
-  $('.description col-10 pt-3 #' + i).val(hourValue);
+  $(this).append($('<p>')).addClass('description col-10 pt-3').text(hourValue);
 });
