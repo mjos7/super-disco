@@ -5,7 +5,8 @@
 Git Page - Deployed Application
 https://mjos7.github.io/work-day-scheduler/
 
-Screenshot of Mockup
+
+**Screenshot of Mockup**
 ![Screenshot of Mockup](./assets/img/work-day-scheduler-mockup.png?raw=true)
 
 ## Description
